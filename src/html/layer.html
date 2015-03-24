@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie6" lang="zh-cn"><![endif]-->
+<!--[if IE 7 ]><html class="ie7" lang="zh-cn"><![endif]-->
+<!--[if IE 8 ]><html class="ie8" lang="zh-cn"><![endif]-->
+<!--[if IE 9 ]><html class="ie9" lang="zh-cn"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="zh-cn"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>layer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <link rel="stylesheet/less" href="../less/reset.less">
+    <link rel="stylesheet/less" href="../less/layer.less">
+
+
+    <link rel="stylesheet/less" href="../less/layer-editAddress.less">
+    <link rel="stylesheet/less" href="../less/layer-tuikuan.less">
+    <link rel="stylesheet/less" href="../less/layer-alert.less">
+
+
+    <style type="text/css">
+        body {
+            background-color: #fff;
+        }
+    </style>
+
+    <script type="text/javascript" src="../../bower_lib/less.js/dist/less-1.5.0.min.js"></script>
+
+
+    <script src="../../bower_lib/jquery/dist/jquery.js"></script>
+
+    <script>
+        $(function () {
+            var jeLayer = $('.je-layer-v1'),
+                    layerTitle = jeLayer.find('.layer-title'),
+                    layerCont = jeLayer.find('.layer-cont'),
+                    layerBottom = jeLayer.find('.layer-bottom'),
+                    TITLE_HEIGHT = 0,
+                    BOTTOM_HEIGHT = 0
+                    ;
+
+            jeLayer.each(function ( i ) {
+                TITLE_HEIGHT = layerTitle.eq(i).length > 0 ? 51: 0;
+                BOTTOM_HEIGHT = layerBottom.eq(i).length > 0 ? 56 : 0;
+                jeLayer.eq(i).height(layerCont.eq(i).outerHeight() + TITLE_HEIGHT + BOTTOM_HEIGHT);
+            });
+        });
+    </script>
+
+
+</head>
+<body>
+
+    <div class="je-page-layer show" id="J-page-layer"></div>
+
+
+    <!-- 标题 按钮 弹层 -->
+    <div class="je-layer-v1 layer-editAddress">
+
+        <div class="layer-title">
+            使用新地址
+        </div>
+
+        <div class="layer-cont">
+            <div class="row-group">
+                <input type="text" class="ipt-txt" placeholder="收货人姓名">
+            </div>
+            <div class="row-group">
+                <div class="select-group">
+                    <select>
+                        <option value="">北京</option>
+                        <option value="">北京</option>
+                    </select>
+                    <select>
+                        <option value="">北京</option>
+                        <option value="">北京</option>
+                    </select>
+                    <select>
+                        <option value="">北京</option>
+                        <option value="">北京</option>
+                    </select>
+                </div>
+                <textarea class="textarea" placeholder="详细地址"></textarea>
+                <span class="tips">手机号不合法，提示信息提示<span class="color-red">变颜色</span>信息</span>
+            </div>
+            <div class="row-group">
+                <input type="text" class="ipt-txt" placeholder="邮政编码">
+            </div>
+            <div class="row-group">
+                <input type="text" class="ipt-txt" placeholder="手机号"><span class="tips color-red">手机号不合法，提示信息提示变颜色信息</span>
+            </div>
+        </div>
+
+        <div class="layer-bottom clearfix">
+            <a class="btn btn-ok" href="#">确定</a>
+            <a class="btn btn-cancel" href="#">取消</a>
+        </div>
+        <a class="layer-close" href="#"></a>
+    </div>
+
+
+    <!-- 按钮 弹层-->
+    <div class="je-layer-v1 layer-tuikuan">
+        <div class="layer-cont">
+            <p class="tk-tips">亲爱的小意，您确定要退款吗？申请退款不能取消哦~</p>
+            <div class="row-group">
+                <label>退款原因<sup>*</sup></label>
+                <select name="" id="">
+                    <option value="">不想买了</option>
+                    <option value="">在别处看到价格更便宜</option>
+                </select>
+            </div>
+            <div class="row-group">
+                <label>说明<sup>*</sup></label>
+                <textarea name="" id="" cols="30" rows="10">
+
+                </textarea>
+            </div>
+            <div class="row-group">
+                <label>上传图片</label>
+                <input type="file"/>
+            </div>
+            <div class="error-box">
+                请选择退款原因或填写退款说明(不限字符)
+            </div>
+        </div>
+
+        <div class="layer-bottom clearfix">
+            <a class="btn btn-ok" href="#">确定并提交申请</a>
+            <a class="btn btn-cancel" href="#">取消退款</a>
+        </div>
+        <a class="layer-close" href="#"></a>
+    </div>
+
+
+    <!-- 提示框 演示1-->
+    <div class="je-layer-v1 layer-alert">
+        <div class="layer-title">
+            抱歉！
+        </div>
+
+        <div class="layer-cont">
+            <p>
+                此款商品已经超过7天退换货服务期限，如有问题请<a href="http://tb.53kf.com/webCompany.php?arg=10062333&style=1" target="_blank">联系客服</a>
+            </p>
+        </div>
+
+        <div class="layer-bottom clearfix">
+            <a class="btn btn-ok" href="#">确定</a>
+            <a class="btn btn-cancel" href="#">取消</a>
+        </div>
+        <a class="layer-close" href="#"></a>
+    </div>
+
+    <!-- 提示框 演示2-->
+    <div class="je-layer-v1 layer-alert">
+        <div class="layer-title">
+            抱歉！
+        </div>
+
+        <div class="layer-cont">
+            <p>
+                此款商品已经超过7天退换货服务期限，如有问题请<a href="http://tb.53kf.com/webCompany.php?arg=10062333&style=1" target="_blank">联系客服</a>
+            </p>
+        </div>
+
+        <div class="layer-bottom clearfix">
+            <a class="btn btn-ok" href="#">确定</a>
+        </div>
+        <a class="layer-close" href="#"></a>
+    </div>
+
+
+    <!-- 提示框 演示3-->
+    <div class="je-layer-v1 layer-alert show">
+        <div class="layer-cont">
+            <div class="icon"><i class="fa fa-exclamation-circle"></i></div>
+            <p class="tc">
+                确定要取消订单?
+            </p>
+        </div>
+
+        <div class="layer-bottom clearfix">
+            <a class="btn btn-ok" href="#">确定</a>
+            <a class="btn btn-cancel" href="#">取消</a>
+        </div>
+        <a class="layer-close" href="#"></a>
+    </div>
+
+    <!-- 基础样式 -->
+    <div class="je-layer-v1 layer-xxx">
+
+        <div class="layer-title">
+            标题
+        </div>
+
+        <div class="layer-cont">
+            基础样式
+        </div>
+
+        <div class="layer-bottom clearfix">
+            <a class="btn btn-ok" href="#">确定</a>
+            <a class="btn btn-cancel" href="#">取消</a>
+        </div>
+        <a class="layer-close" href="#"></a>
+    </div>
+
+
+</body>
+</html>

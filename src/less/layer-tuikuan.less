@@ -1,0 +1,52 @@
+
+
+@import "variables";
+
+/* -------------------------
+  退款弹层
+------------------------- */
+
+.layer-tuikuan {
+  width: 600px;
+
+  .tk-tips {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+  }
+
+  .row-group {
+    margin-top: 20px;
+    //80+20+400=500
+
+    label {
+      float: left;
+      margin-right: 20px;
+      width: 80px;
+      text-align: right;
+      sup {
+        color: @color-jiae-red-text;
+      }
+    }
+
+    select {
+      width: 200px;
+      height: 30px;
+    }
+
+    textarea {
+      width: 398px;
+      height: 88px;
+      border: 1px solid @color-my-order-line;
+      font-size: 14px;
+      color: #666;
+    }
+  }
+
+  .error-box {
+    margin-top: 20px;
+    color: @color-jiae-red-text;
+    text-indent: 100px;
+  }
+}

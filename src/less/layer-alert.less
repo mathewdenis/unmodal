@@ -1,0 +1,37 @@
+
+@import "variables";
+
+/* -------------------------
+  提示框弹层
+------------------------- */
+
+
+.layer-alert {
+  width: 300px;
+
+  .layer-cont {
+
+    .icon {
+      text-align: center;
+    }
+    .fa-exclamation-circle {
+      font-size: 50px;
+      color: @color-jiae-red-bg;
+    }
+
+    a {
+      color: @color-jiae-red-text;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    p {
+      color: #333;
+    }
+
+    p.tc {
+      text-align: center;
+    }
+  }
+}
