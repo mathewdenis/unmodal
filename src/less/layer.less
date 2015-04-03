@@ -1,12 +1,5 @@
 
 
-@import "variables";
-
-
-
-
-
-
 // -- Font Awesome Start
 /*
  *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -48,8 +41,17 @@
   layer -- 通用弹层组件
 ---------------------------------- */
 
+// 按钮同一处理
+button {
+  border: none;
+  padding: 0;
+  &:focus {
+    outline: none;
+  }
+}
+
 // 遮罩
-.je-page-layer,
+.page-layer,
 #page-layer {
   display: none;
   position: fixed;
@@ -62,7 +64,7 @@
 }
 
 // 弹层
-.je-layer-v1 {
+.layer-v1 {
   display: none;
   position: fixed;
   top: 0;
@@ -115,24 +117,26 @@
     .btn {
       display: inline-block;
       margin: 0 5px;
-      padding: 0 20px;
       font-size: 14px;
       text-align: center;
+      cursor: pointer;
     }
 
-    .btn-ok {
-      height: 36px;
-      line-height: 36px;
-      background: @color-jiae-red-bg;
+    .btn-red {
+//      height: 36px;
+//      line-height: 36px;
+      padding: 8px 20px;
+      background: @color-layer-red-bg;
       color: #fff;
       &:hover {
         opacity: .8;
       }
     }
 
-    .btn-cancel {
-      height: 34px;
-      line-height: 34px;
+    .btn-white {
+//      height: 36px;
+//      line-height: 36px;
+      padding: 7px 20px;
       border: 1px solid #ccc;
       background: #fff;
       &:hover {

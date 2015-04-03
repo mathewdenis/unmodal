@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .test {
+            height: 200px;
+            background-color: #333;
+        }
+    </style>
+
+    <script src="../../bower_lib/jquery/dist/jquery.js"></script>
+
+    <script src="../js/layer.js"></script>
+
+
+    <script>
+        $(function () {
+
+            var layer = new Layer($('.test' ), {
+                    animate: true
+                });
+
+            $('.btn-show').click(function () {
+                layer.show();
+            });
+            $('.btn-close').click(function () {
+                layer.close();
+            });
+            // new Layer( $('.test') );
+        });
+    </script>
+</head>
+<body>
+    <button class="btn-show">显示</button>
+    <button class="btn-close">关闭</button>
+    <div class="test" style="display:none;">ss</div>
+    jj
+</body>
+</html>
