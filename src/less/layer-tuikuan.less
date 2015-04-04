@@ -1,6 +1,12 @@
 
 
-@import "variables";
+@import 'reset';
+@import 'variables';
+
+@import 'lib/animate';
+
+@import 'layer';
+
 
 /* -------------------------
   退款弹层
@@ -26,7 +32,7 @@
       width: 80px;
       text-align: right;
       sup {
-        color: @color-jiae-red-text;
+        color: @color-layer-red-text;
       }
     }
 
@@ -38,7 +44,7 @@
     textarea {
       width: 398px;
       height: 88px;
-      border: 1px solid @color-my-order-line;
+      border: 1px solid #ccc;
       font-size: 14px;
       color: #666;
     }
@@ -46,7 +52,7 @@
 
   .error-box {
     margin-top: 20px;
-    color: @color-jiae-red-text;
+    color: @color-layer-red-text;
     text-indent: 100px;
   }
 }

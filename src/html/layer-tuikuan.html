@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>layer-alert</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <link rel="stylesheet/less" href="../less/layer-tuikuan.less">
+
+    <style type="text/css">
+        body {
+            background-color: #fff;
+        }
+    </style>
+
+    <script type="text/javascript" src="../../bower_lib/less.js/dist/less-1.5.0.min.js"></script>
+
+    <script src="../../bower_lib/jquery/dist/jquery.js"></script>
+
+    <script src="../js/layer.js"></script>
+
+    <script>
+        $(function () {
+            var layerTuikuan = new Layer($('#J-layer-tuikuan'), {
+                animate: true
+            });
+            layerTuikuan.show();
+        });
+    </script>
+</head>
+<body>
+
+    <div class="page-layer" id="J-page-layer"></div>
+
+
+    <div class="layer-v1 layer-tuikuan" id="J-layer-tuikuan">
+        <div class="layer-cont">
+            <p class="tk-tips">亲爱的用户，您确定要退款吗？申请退款不能取消哦~</p>
+            <div class="row-group">
+                <label>退款原因<sup>*</sup></label>
+                <select name="" id="">
+                    <option value="">不想买了</option>
+                    <option value="">在别处看到价格更便宜</option>
+                </select>
+            </div>
+            <div class="row-group">
+                <label>说明<sup>*</sup></label>
+                <textarea cols="30" rows="10">
+
+                </textarea>
+            </div>
+            <div class="row-group">
+                <label>上传图片</label>
+                <input type="file"/>
+            </div>
+            <div class="error-box">
+                请选择退款原因或填写退款说明(不限字符)
+            </div>
+        </div>
+
+        <div class="layer-bottom clearfix">
+            <a class="btn btn-red" href="#">确定并提交申请</a>
+            <a class="btn btn-white" href="#">取消退款</a>
+        </div>
+        <a class="layer-close" href="#"></a>
+    </div>
+
+</body>
+</html>
