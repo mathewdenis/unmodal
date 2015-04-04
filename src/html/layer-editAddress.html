@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>layer-alert</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <link rel="stylesheet/less" href="../less/layer-editAddress.less">
+
+    <style type="text/css">
+        body {
+            background-color: #fff;
+        }
+    </style>
+
+    <script type="text/javascript" src="../../bower_lib/less.js/dist/less-1.5.0.min.js"></script>
+
+    <script src="../../bower_lib/jquery/dist/jquery.js"></script>
+
+    <script src="../js/layer.js"></script>
+
+    <script>
+        $(function () {
+            var layerEditAddress = new Layer($('#J-layer-editAddress'), {
+                animate: true
+            });
+            layerEditAddress.show();
+        });
+    </script>
+</head>
+<body>
+
+    <div class="page-layer" id="J-page-layer"></div>
+
+    <div class="layer-v1 layer-editAddress" id="J-layer-editAddress">
+
+        <div class="layer-title">
+            使用新地址
+        </div>
+
+        <div class="layer-cont">
+            <div class="row-group">
+                <input type="text" class="ipt-txt" placeholder="收货人姓名">
+            </div>
+            <div class="row-group">
+                <div class="select-group">
+                    <select>
+                        <option value="">北京</option>
+                        <option value="">北京</option>
+                    </select>
+                    <select>
+                        <option value="">北京</option>
+                        <option value="">北京</option>
+                    </select>
+                    <select>
+                        <option value="">北京</option>
+                        <option value="">北京</option>
+                    </select>
+                </div>
+                <textarea class="textarea" placeholder="详细地址"></textarea>
+                <span class="tips">手机号不合法，提示信息提示<span class="color-red">变颜色</span>信息</span>
+            </div>
+            <div class="row-group">
+                <input type="text" class="ipt-txt" placeholder="邮政编码">
+            </div>
+            <div class="row-group">
+                <input type="text" class="ipt-txt" placeholder="手机号"><span class="tips color-red">手机号不合法，提示信息提示变颜色信息</span>
+            </div>
+        </div>
+
+        <div class="layer-bottom clearfix">
+            <a class="btn btn-red" href="#">确定</a>
+            <a class="btn btn-white" href="#">取消</a>
+        </div>
+        <a class="layer-close" href="#"></a>
+    </div>
+
+</body>
+</html>

@@ -11,6 +11,9 @@
             margin: 0;
             padding: 0;
         }
+        .layer-v1 {
+            display: none;
+        }
         .test {
             height: 200px;
             background-color: #333;
@@ -25,7 +28,7 @@
     <script>
         $(function () {
 
-            var layer = new Layer($('.test' ), {
+            var layer = new Layer($('#test' ), {
                     animate: true
                 });
 
@@ -42,7 +45,9 @@
 <body>
     <button class="btn-show">显示</button>
     <button class="btn-close">关闭</button>
-    <div class="test" style="display:none;">ss</div>
+    <div class="layer-v1" id="test">
+        <div class="layer-cont test">ss</div>
+    </div>
     jj
 </body>
 </html>
