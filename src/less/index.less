@@ -1,0 +1,100 @@
+
+/* --------------------------------- *\
+  index.less -- layer UI汇总
+\* --------------------------------- */
+
+@import 'reset';
+@import 'variables';
+
+
+body {
+  background-color: #f1f1f1;
+}
+
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.site-header {
+
+  line-height: 60px;
+  box-shadow: 0 1px 2px #c5c5c5;
+  background-color: #fff;
+
+  .title {
+    font-size: 30px;
+    text-align: center;
+    color: #666;
+  }
+
+  .text {
+    text-align: center;
+    a {
+      text-decoration: underline;
+    }
+  }
+}
+
+.layer-list-wrapper {
+  margin: 20px auto 0 auto;
+  max-width: 1200px;
+
+  li {
+    float: left;
+    margin: 10px;
+    width: 280px;
+    height: 240px;
+    box-shadow: 0 1px 2px #c5c5c5;
+    background-color: #fff;
+
+    .pic {
+      position: relative;
+      width: 280px;
+      height: 160px;
+      background-color: #666;
+      img {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 50%;
+      }
+    }
+
+    .title {
+      line-height: 46px;
+      font-size: 16px;
+      font-weight: normal;
+      text-align: center;
+      color: #333;
+    }
+
+    .info {
+      line-height: 34px;
+      font-size: 14px;
+
+      a {
+        color: #666;
+        &:hover {
+          color: @color-layer-red-text;
+        }
+      }
+    }
+
+    .preview {
+      margin-left: 10px;
+    }
+
+    .code {
+      margin-right: 10px;
+    }
+
+  }
+}
