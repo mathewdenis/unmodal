@@ -7,6 +7,16 @@
 @import 'variables';
 
 
+// layer styles start
+@import 'common';
+@import 'layer-base';
+@import 'layer-alert';
+@import 'layer-editAddress';
+@import 'layer-tuikuan';
+@import 'layer-paying';
+// layer styles end
+
+
 body {
   background-color: #f1f1f1;
 }
@@ -57,6 +67,15 @@ body {
       width: 280px;
       height: 160px;
       background-color: #666;
+
+
+      &:hover {
+        cursor: pointer;
+        img {
+          -webkit-transform: scale(1.2);
+        }
+      }
+
       img {
         position: absolute;
         top: 0;
@@ -65,6 +84,7 @@ body {
         right: 0;
         margin: auto;
         width: 50%;
+        -webkit-transition: all .5s;
       }
     }
 
@@ -97,4 +117,8 @@ body {
     }
 
   }
+}
+
+.tpl-layer {
+  display: none;
 }
