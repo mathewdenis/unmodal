@@ -6,4 +6,3 @@
 
 <img src="https://raw.githubusercontent.com/wangchi/layer/master/src/images/temp/layer-paying.png" width="400px" height="196px">
 
-**[演示地址](http://wangchi.github.io/works/layer/)**
