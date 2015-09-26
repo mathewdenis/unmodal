@@ -1,10 +1,16 @@
 {
-    "name": "layer",
-    "version": "0.1.0",
-    "devDependencies": {
-        "grunt": "*",
-        "grunt-contrib-less": "*",
-        "grunt-css": "*",
-        "grunt-contrib-watch": "*"
-    }
+  "name": "dialog",
+  "description": "dialog component",
+  "version": "0.1.1",
+  "author": "wangchi <hiwangchi@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/wangchi/dialog",
+  "homepage": "http://wangchi.github.io/dialog/",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-contrib-less": "*",
+    "grunt-css": "*",
+    "grunt-contrib-watch": "*"
+  }
 }
