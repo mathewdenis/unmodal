@@ -1,0 +1,13 @@
+{
+  "strict"    : true,
+  "node"      : true,
+  "camelcase" : true,
+  "quotmark"  : "single",
+  "es5"       : "true",
+  "esnext"    : true,
+  "globals"   : {
+    "require" : true,
+    "define"  : true,
+    "window"  : true
+  }
+}
