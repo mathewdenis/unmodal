@@ -1,15 +1,38 @@
 /**
-*
-* reset.less v0.1.0
+* reset.less v1.0.0
 * CSS Reset Styles
 * Source: http://github.com/wangchi/css-reset
 *
 * Mail: hiwangchi@gmail.com
 * Date: 2014-12-10 11:06:28
 *
-* MIT
-*
+* MIT License
 */
+
+
+// ------------------------------
+// Variables
+// ------------------------------
+// @font: 14px/1.5 tahoma, 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+@font: 14px "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+
+@default-line-height: 1.5;
+
+@font-color: #666;
+
+@link-color: #36f;
+
+@link-outline: hidden;
+
+@link-text-decoration: underline;
+
+@form-outline: none;
+
+@textarea-resize: none;
+
+@legend-color: #333;
+
+
 
 
 // ------------------------------
@@ -62,8 +85,9 @@ sub {
 }
 
 legend {
-  color: #333;
+  color: @legend-color;
 }
+
 
 
 
@@ -83,38 +107,40 @@ footer {
 
 
 
+
 // ------------------------------
 // Remove some default styles
 // ------------------------------
 
 input,
 textarea {
-  outline-style: none;
+  outline-style: @form-outline;
 }
 
 input[type="text"], input[type="password"], textarea {
-  outline-style: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  outline-style: @form-outline;
+  -webkit-appearance: @form-outline;
+  -moz-appearance: @form-outline;
   // appearance: none;
 }
 
 textarea {
-  resize: none;
+  resize: @textarea-resize;
 }
 
 a, a:link, a:visited {
-  color: #333;
+  color: @link-color;
 }
 
 a:active,
 a:focus {
-  outline: none;
+  outline: @link-outline;
 }
 
 a {
-  text-decoration: none;
+  text-decoration: @link-text-decoration;
 }
+
 
 
 // ------------------------------
@@ -126,6 +152,7 @@ button,
 input,
 select,
 textarea {
-  font: 12px/1.5 tahoma, 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
-  color: #606060;
+  font: @font;
+  line-height: @default-line-height;
+  color: @font-color;
 }
