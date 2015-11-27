@@ -11,7 +11,7 @@ module.exports = function (grunt) {
       development: {
         options: {
           paths: ['assets/css'],
-          cleancss: true
+          compress: false
         },
         files: {
           'dist/dialog.css': 'src/less/dialog.less'
@@ -19,16 +19,25 @@ module.exports = function (grunt) {
       }
     },
 
+    copy: {
+      main: {
+        files: [
+          {expand: true, flatten: true, src: 'src/js/dialog.js', dest: 'dist'}
+        ]
+      }
+    },
+
     watch: {
       scripts: {
-        files: ['src/less/*.less'],
-        tasks: 'less'
+        files: ['src/less/*.less', 'src/js/*.js'],
+        tasks: ['less', 'copy']
       }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', ['less', 'watch']);
+  grunt.registerTask('default', ['less', 'copy', 'watch']);
 };

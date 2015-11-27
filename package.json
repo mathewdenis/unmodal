@@ -1,7 +1,7 @@
 {
-  "name": "dialog",
-  "description": "dialog component",
-  "version": "0.1.1",
+  "name": "Dialog",
+  "description": "Dialog component",
+  "version": "0.2.0",
   "author": "wangchi <hiwangchi@gmail.com>",
   "license": "MIT",
   "repository": "https://github.com/wangchi/dialog",

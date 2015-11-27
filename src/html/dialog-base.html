@@ -5,17 +5,20 @@
   <title>Dialog Base</title>
   <link rel="stylesheet" type="text/css" href="/dist/dialog.css">
   <style type="text/css">
-    .dialog-backdrap,
-    .dialog {
-      display: block;
+    .container {
+      height: 2000px;
     }
   </style>
+  <script type="text/javascript" src="/bower_components/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="/dist/dialog.js"></script>
 </head>
 <body>
 
-  <div class="container">页面内容</div>
+  <div class="container">
+    页面内容
+  </div>
 
-  <div class="dialog dialog-theme-default dialog-base">
+  <div class="dialog dialog-theme-default dialog-base show">
     <div class="dialog-container">
       <div class="dialog-header">
         <h3 class="title">标题</h3>
@@ -30,6 +33,6 @@
       </div>
     </div>
   </div>
-  <div class="dialog-backdrap"></div>
+  <div class="dialog-backdrap show"></div>
 </body>
 </html>
