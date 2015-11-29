@@ -5,6 +5,65 @@
  */
 
 'use strict';
-(function () {
-  console.log($);
-})();
+$(function () {
+
+  function Dialog () {
+    var args = arguments[0];
+    if (typeof args !== 'object' || args.length === + args.length ) {
+      alert('参数必须是JSON对象!');
+    }
+    this.options = args;
+    this.el = $(args.el);
+    this.backdrop = $('#j-dialog-backdrop');
+  }
+
+  Dialog.prototype = {
+    show: function () {
+      var self = this;
+      var _el = self.el;
+
+      self.setPosition();
+
+      if (self.options.backdrop) {
+        self.backdrop.show();
+      }
+      _el.show();
+
+      _el.find('.j-close').click(function () {
+        self.close();
+      });
+    },
+
+    close: function () {
+      this.el.hide();
+      this.backdrop.hide();
+    },
+
+    setPosition: function () {
+      var self = this;
+      var _el = self.el;
+
+      _el.css({
+        top: ( $(window).height() - _el.outerHeight() )/2,
+        left: ( $(window).width() - _el.outerWidth() )/2
+      });
+    }
+
+  };
+
+
+  var dialog1 = new Dialog({
+    el: '#j-dialog-base',
+    fixed: false,
+    backdrop: true,
+    onShow: function () {
+
+    },
+    onClose: function () {
+
+    }
+  });
+
+  dialog1.show();
+
+});
