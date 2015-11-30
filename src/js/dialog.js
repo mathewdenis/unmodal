@@ -51,19 +51,6 @@ $(function () {
 
   };
 
-
-  var dialog1 = new Dialog({
-    el: '#j-dialog-base',
-    fixed: false,
-    backdrop: true,
-    onShow: function () {
-
-    },
-    onClose: function () {
-
-    }
-  });
-
-  dialog1.show();
+  window.Dialog = Dialog;
 
 });

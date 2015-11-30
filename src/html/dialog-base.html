@@ -11,6 +11,29 @@
   </style>
   <script type="text/javascript" src="/bower_components/jquery/dist/jquery.js"></script>
   <script type="text/javascript" src="/dist/dialog.js"></script>
+  <script type="text/javascript">
+    $(function () {
+
+      var dialog1 = new Dialog({
+        el: '#j-dialog-base',
+        fixed: false,
+        backdrop: true,
+        onShow: function () {
+
+        },
+        onClose: function () {
+
+        }
+      });
+
+
+      // var dialog1 = new Dialog({
+      //   el: '#j-dialog-base'
+      // });
+
+      dialog1.show();
+    });
+  </script>
 </head>
 <body>
 
