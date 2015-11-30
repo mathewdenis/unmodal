@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dialog Base</title>
+  <link rel="stylesheet" type="text/css" href="/dist/dialog.css">
+  <style type="text/css">
+    .container {
+      height: 2000px;
+    }
+  </style>
+  <script type="text/javascript" src="/bower_components/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="/dist/dialog.js"></script>
+  <script type="text/javascript">
+    $(function () {
+
+      var dialog1 = new Dialog({
+        el: '#j-dialog-base',
+        fixed: false,
+        backdrop: true,
+        onShow: function () {
+
+        },
+        onClose: function () {
+
+        }
+      });
+
+
+      // var dialog1 = new Dialog({
+      //   el: '#j-dialog-base'
+      // });
+
+      dialog1.show();
+    });
+  </script>
+</head>
+<body>
+
+  <div class="container">
+    页面内容
+  </div>
+
+  <div class="dialog dialog-theme-default dialog-base" id="j-dialog-base">
+    <div class="dialog-container">
+      <div class="dialog-header">
+        <h3 class="title">标题</h3>
+        <a class="dialog-close j-close" href="javascript:;"><i>&times;</i></a>
+      </div>
+      <div class="dialog-cont">
+        Dialog 内容
+      </div>
+      <div class="dialog-footer">
+        <a href="javascript:;" class="btn btn-ok">确认</a>
+        <a href="javascript:;" class="btn btn-cancel j-close">取消</a>
+      </div>
+    </div>
+  </div>
+  <div class="dialog-backdrop" id="j-dialog-backdrop"></div>
+</body>
+</html>

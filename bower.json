@@ -1,16 +1,15 @@
 {
-    "name": "layer",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/wangchi/layer.git"
-    },
-    "version": "0.1.0",
-    "description": "Some Layer UI",
-    "author": "WalkerBe",
-    "homepage": "http://www.walkerbe.com/",
-    "dependencies": {
-        "jquery": "~1.11.1",
-        "less.js": "1.5.0"
-    },
-    "private": true
+  "name": "Dialog",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wangchi/dialog.git"
+  },
+  "version": "0.2.0",
+  "description": "A simple dialog component",
+  "author": "Walker",
+  "homepage": "",
+  "dependencies": {
+    "jquery": "~1.11.3"
+  },
+  "private": true
 }
