@@ -1,4 +1,5 @@
 'use strict';
+
 module.exports = function (grunt) {
   var paths = {
     less: 'src/less/',
@@ -32,12 +33,32 @@ module.exports = function (grunt) {
         files: ['src/less/*.less', 'src/js/*.js'],
         tasks: ['less', 'copy']
       }
+    },
+
+    browserSync: {
+      bsFiles: {
+        src: [
+          'src/html/*.html',
+          'src/less/*.less',
+          'src/js/*.js'
+        ],
+        options: {
+          port: '3000',
+          watchTask: true,
+          server: {
+            // proxy: 'server.js'
+            baseDir: './'
+          },
+          open: false
+        }
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-browser-sync');
 
-  grunt.registerTask('default', ['less', 'copy', 'watch']);
+  grunt.registerTask('default', ['browserSync', 'watch']);
 };
