@@ -1,10 +1,43 @@
 /**
- * Dialog -- dialog.js
- * 对话框样式
+ * Unmodal
+ * @version 0.0.1
+ * @description jQuery模态框插件
  * @author hiwangchi@gmail.com
+ * @homepage https://github.com/wangchi/unmodal
  */
 
 'use strict';
+
+(function ($) {
+
+  if (!$) {
+    return console.warn('Unmodal needs jQuery!');
+  }
+
+  $.Unmodal = function (context, options) {
+    var self = this;
+
+    console.log(context);
+    console.log(self);
+
+    self.defaults = {
+
+    };
+
+
+  };
+
+  $.fn.unmodal = function (opts) {
+    return this.each(function () {
+      var $this = $(this);
+      console.log($this);
+
+      return $this.data('unmodal', new $.Unmodal($this, opts));
+    });
+  };
+
+})(window.jQuery);
+
 $(function () {
 
   function Dialog () {
