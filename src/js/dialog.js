@@ -21,7 +21,10 @@
     console.log(self);
 
     self.defaults = {
-
+      fixed: false,
+      backdrap: true,
+      animation: '',
+      esc: true
     };
 
 
