@@ -15,7 +15,7 @@ module.exports = function (grunt) {
           compress: false
         },
         files: {
-          'dist/dialog.css': 'src/less/dialog.less'
+          'src/css/unmodal.css': 'src/less/unmodal.less'
         }
       }
     },
@@ -23,15 +23,15 @@ module.exports = function (grunt) {
     copy: {
       main: {
         files: [
-          {expand: true, flatten: true, src: 'src/js/dialog.js', dest: 'dist'}
+          {expand: true, flatten: true, src: 'src/js/unmodal.js', dest: 'src/js'}
         ]
       }
     },
 
     watch: {
       scripts: {
-        files: ['src/less/*.less', 'src/js/*.js'],
-        tasks: ['less', 'copy']
+        files: ['src/less/*.less'],
+        tasks: ['less']
       }
     },
 
@@ -39,7 +39,7 @@ module.exports = function (grunt) {
       bsFiles: {
         src: [
           'src/html/*.html',
-          'src/less/*.less',
+          'src/css/*.css',
           'src/js/*.js'
         ],
         options: {
@@ -56,9 +56,9 @@ module.exports = function (grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-less');
-  grunt.loadNpmTasks('grunt-contrib-copy');
+  // grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-browser-sync');
 
-  grunt.registerTask('default', ['browserSync', 'watch']);
+  grunt.registerTask('server', ['browserSync', 'less', 'watch']);
 };

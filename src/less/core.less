@@ -1,0 +1,108 @@
+/**
+ * unmodal
+ * 对话框样式
+ * @author hiwangchi@gmail.com
+ */
+
+@import "./variables.less";
+@import "./mixin.less";
+
+
+.unmodal-backdrop {
+  display: none;
+  position: fixed;
+  z-index: @backdrop-zIndex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .3);
+}
+
+.unmodal {
+  display: none;
+  position: absolute;
+  z-index:  @backdrop-zIndex + 1;
+  top: 0;
+  left: 0;
+  // width: 300px;
+  // height: 100%;
+  // overflow-y: auto;
+
+  .unmodal-container {
+    // margin: 100px auto;
+    // width: 300px;
+  }
+
+  .unmodal-header {
+    position: relative;
+    height: 46px;
+    border-bottom: 1px solid #eee;
+    background: @unmodal-theme-bg;
+
+    .title {
+      margin: 0;
+      padding: 0;
+      padding-left: 15px;
+      line-height: 46px;
+      font-weight: normal;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .unmodal-close {
+      position: absolute;
+      top: 6px;
+      right: 10px;
+      font-size: 22px;
+      color: #666;
+      text-decoration: none;
+
+      &:hover {
+        color: #fa7d3c;
+      }
+    }
+  }
+
+  .unmodal-cont {
+    padding: 15px;
+    background: @unmodal-theme-bg;
+  }
+
+  .unmodal-footer {
+    width: 100%;
+    height: 56px;
+    background: #f1f1f1;
+    font-size: 0;
+    text-align: center;
+
+    .btn {
+      display: inline-block;
+      margin: 12px 10px;
+      line-height: 30px;
+      padding: 0 12px;
+      font-size: 14px;
+      border-radius: 3px;
+      text-decoration: none;
+    }
+
+    .btn-ok {
+      border: 1px solid #3ec291;
+      background: @unmodal-theme-color;
+      color: #fff;
+      &:hover {
+        background: #4ac598;
+      }
+    }
+
+    .btn-cancel {
+      border: 1px solid #ccc;
+      background: #fff;
+      color: #333;
+      &:hover {
+        background: #e6e6e6;
+        border-color: #adadad;
+      }
+    }
+  }
+}

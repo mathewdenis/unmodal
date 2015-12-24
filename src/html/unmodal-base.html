@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Unmodal Base</title>
+  <link rel="stylesheet" type="text/css" href="/src/css/unmodal.css">
+  <style type="text/css">
+    .container {
+      height: 2000px;
+    }
+  </style>
+  <script type="text/javascript" src="/bower_components/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="/src/js/unmodal.js"></script>
+  <script type="text/javascript" src="/src/js/unmodal-base.js"></script>
+</head>
+<body>
+
+  <div class="container">
+    页面内容
+  </div>
+
+  <div class="unmodal" id="j-unmodal-base">
+    <div class="unmodal-container">
+      <div class="unmodal-header">
+        <h3 class="title">标题</h3>
+        <a class="unmodal-close j-unmodal-close" href="javascript:;">&times;</a>
+      </div>
+      <div class="unmodal-cont">
+        这里是内容
+      </div>
+      <div class="unmodal-footer">
+        <a href="javascript:;" class="btn btn-ok">确认</a>
+        <a href="javascript:;" class="btn btn-cancel j-unmodal-close">取消</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
