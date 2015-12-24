@@ -24,9 +24,9 @@
 
       esc: true,
 
-      onShow: null,
+      onShown: null,
 
-      onClose: null
+      onClosed: null
     };
 
     self.options = {};
@@ -51,18 +51,24 @@
         self.close();
       });
 
-      self.onShow();
+      self.onShown();
     };
 
-    self.onShow = function () {
-      if (typeof self.options.onShow === 'function') {
-        self.options.onShow(self.$context);
+    self.onShown = function () {
+      if (typeof self.options.onShown === 'function') {
+        self.options.onShown(self.$context);
       }
     };
 
     self.close = function () {
       self.$backdrap.remove();
       self.$context.hide();
+    };
+
+    self.onClosed = function () {
+      if (typeof self.options.onClosed === 'function') {
+        self.options.onClosed(self.$context);
+      }
     };
 
     self.setup = function () {
