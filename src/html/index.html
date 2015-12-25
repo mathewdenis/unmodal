@@ -1,312 +1,49 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Dialog - 对话框组件</title>
+  <meta charset="UTF-8">
+  <title>Unmodal Base</title>
+  <link rel="stylesheet" type="text/css" href="/src/css/unmodal.css">
+  <style type="text/css">
+    .container {
+      height: 2000px;
+    }
 
-    <link rel="stylesheet/less" href="../less/index.less">
-
-    <script type="text/javascript" src="../../bower_components/less.js/dist/less-1.5.0.min.js"></script>
-
-
+    button {
+      display: block;
+      margin-top: 20px;
+    }
+  </style>
+  <script type="text/javascript" src="/bower_components/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="/src/js/unmodal.js"></script>
+  <script type="text/javascript" src="/src/js/unmodal-demo.js"></script>
 </head>
 <body>
-    <header class="site-header">
-        <h1 class="title">Dialog - 对话框弹层组件</h1>
-        <!--<p class="text"><a href="https://github.com/wangchi/layer">https://github.com/wangchi/layer</a></p>-->
-    </header>
 
-    <ul class="layer-list-wrapper" id="J-layer-lists">
-        <li>
-            <div class="pic J-layer-base-preview">
-                <img src="../images/temp/layer-base.png" alt="">
-            </div>
-            <h2 class="title">基础弹层</h2>
-            <div class="info">
-                <span class="preview fl J-layer-base-preview"><a href="#">预览效果</a></span>
-                <span class="code fr"><a href="#">查看源码</a></span>
-            </div>
-        </li>
-        <li>
-            <div class="pic J-layer-alert-preview">
-                <img src="../images/temp/alert.png" alt="">
-            </div>
-            <h2 class="title">警告框</h2>
-            <div class="info">
-                <span class="preview fl J-layer-alert-preview"><a href="#">预览效果</a></span>
-                <span class="code fr"><a href="#">查看源码</a></span>
-            </div>
-        </li>
-        <li>
-            <div class="pic J-layer-alert-icon-preview">
-                <img src="../images/temp/alert-icon.png" alt="">
-            </div>
-            <h2 class="title">带感叹号的警告框</h2>
-            <div class="info">
-                <span class="preview fl J-layer-alert-icon-preview"><a href="#">预览效果</a></span>
-                <span class="code fr"><a href="#">查看源码</a></span>
-            </div>
-        </li>
-        <li>
-            <div class="pic J-layer-editAddress-preview">
-                <img src="../images/temp/layer-editaddress.png" alt="">
-            </div>
-            <h2 class="title">编辑地址弹层</h2>
-            <div class="info">
-                <span class="preview fl J-layer-editAddress-preview"><a href="#">预览效果</a></span>
-                <span class="code fr"><a href="#">查看源码</a></span>
-            </div>
-        </li>
-        <li>
-            <div class="pic J-layer-tuikuan-preview">
-                <img src="../images/temp/layer-tuikuan.png" alt="">
-            </div>
-            <h2 class="title">退款弹层</h2>
-            <div class="info">
-                <span class="preview fl J-layer-tuikuan-preview"><a href="#">预览效果</a></span>
-                <span class="code fr"><a href="#">查看源码</a></span>
-            </div>
-        </li>
-        <li>
-            <div class="pic J-layer-paying-preview">
-                <img src="../images/temp/layer-paying.png" alt="">
-            </div>
-            <h2 class="title">支付弹层</h2>
-            <div class="info">
-                <span class="preview fl J-layer-paying-preview"><a href="#">预览效果</a></span>
-                <span class="code fr"><a href="#">查看源码</a></span>
-            </div>
-        </li>
-    </ul>
+  <div class="container">
+    <button class="j-unmodal-base">基础对话框</button>
+    <button class="j-unmodal-no-footer">没有footer</button>
+    <button class="j-unmodal-no-header">没有header</button>
+    <button class="j-unmodal-event">添加事件</button>
+  </div>
 
-    <!-- 基础弹层 -->
-    <textarea class="tpl-layer" id="J-tpl-layer-base">
-        <div class="layer-v1 layer-base" id="J-layer-base">
-            <div class="layer-title">
-                标题
-            </div>
+  <!--
+  <div class="unmodal" id="j-unmodal-base">
+    <div class="unmodal-container">
+      <div class="unmodal-header">
+        <h3 class="title">标题</h3>
+        <a class="unmodal-close j-unmodal-close" href="javascript:;">&times;</a>
+      </div>
+      <div class="unmodal-cont">
+        这里是内容
+      </div>
+      <div class="unmodal-footer">
+        <a href="javascript:;" class="btn btn-ok j-unmodal-ok">确认</a>
+        <a href="javascript:;" class="btn btn-cancel j-unmodal-close">取消</a>
+      </div>
+    </div>
+  </div>
+-->
 
-            <div class="layer-cont">
-                基础样式
-            </div>
-
-            <div class="layer-bottom clearfix">
-                <button class="btn btn-red">确定</button>
-                <button class="btn btn-white">取消</button>
-            </div>
-            <a class="layer-close" href="#"></a>
-        </div>
-    </textarea>
-
-    <!-- 警告框 -->
-    <textarea class="tpl-layer" id="J-tpl-layer-alert">
-        <div class="layer-v1 layer-alert" id="J-layer-alert">
-            <div class="layer-title">
-                提示！
-            </div>
-
-            <div class="layer-cont">
-                <p>
-                    这是一个提示框，取消按钮可以去掉，可以加链接<a href="#" target="_blank">这是链接</a>
-                </p>
-            </div>
-
-            <div class="layer-bottom clearfix">
-                <button class="btn btn-red">确定</button>
-                <button class="btn btn-white">取消</button>
-            </div>
-            <a class="layer-close" href="#"></a>
-        </div>
-    </textarea>
-
-
-    <!-- 带感叹号的警告框 -->
-    <textarea class="tpl-layer" id="J-tpl-layer-alert-icon">
-        <div class="layer-v1 layer-alert" id="J-layer-alert-icon">
-            <div class="layer-cont">
-                <div class="icon"><i class="fa fa-exclamation-circle"></i></div>
-                <p class="tc">
-                    带感叹号的提示！
-                </p>
-            </div>
-
-            <div class="layer-bottom clearfix">
-                <button class="btn btn-red">确定</button>
-                <!--<button class="btn btn-white">取消</button>-->
-            </div>
-            <a class="layer-close" href="#"></a>
-        </div>
-    </textarea>
-
-
-    <!-- 地址编辑弹层 -->
-    <textarea class="tpl-layer" id="J-tpl-layer-editAddress">
-        <div class="layer-v1 layer-editAddress" id="J-layer-editAddress">
-
-            <div class="layer-title">
-                使用新地址
-            </div>
-
-            <div class="layer-cont">
-                <div class="row-group">
-                    <input type="text" class="ipt-txt" placeholder="收货人姓名">
-                </div>
-                <div class="row-group">
-                    <div class="select-group">
-                        <select>
-                            <option value="">北京</option>
-                            <option value="">北京</option>
-                        </select>
-                        <select>
-                            <option value="">北京</option>
-                            <option value="">北京</option>
-                        </select>
-                        <select>
-                            <option value="">北京</option>
-                            <option value="">北京</option>
-                        </select>
-                    </div>
-                    <span class="tips">手机号不合法，提示信息提示<span class="color-red">变颜色</span>信息</span>
-                </div>
-                <div class="row-group">
-                    <input type="text" class="ipt-txt" placeholder="邮政编码">
-                </div>
-                <div class="row-group">
-                    <input type="text" class="ipt-txt" placeholder="手机号"><span class="tips color-red">手机号不合法，提示信息提示变颜色信息</span>
-                </div>
-            </div>
-
-            <div class="layer-bottom clearfix">
-                <a class="btn btn-red" href="#">确定</a>
-                <a class="btn btn-white" href="#">取消</a>
-            </div>
-            <a class="layer-close" href="#"></a>
-        </div>
-    </textarea>
-
-
-    <!-- 退款弹层 -->
-    <textarea class="tpl-layer" id="J-tpl-layer-tuikuan">
-        <div class="layer-v1 layer-tuikuan" id="J-layer-tuikuan">
-            <div class="layer-cont">
-                <p class="tk-tips">亲爱的用户，您确定要退款吗？申请退款不能取消哦~</p>
-                <div class="row-group">
-                    <label>退款原因<sup>*</sup></label>
-                    <select name="" id="">
-                        <option value="">不想买了</option>
-                        <option value="">在别处看到价格更便宜</option>
-                    </select>
-                </div>
-                <div class="row-group">
-                    <label>说明<sup>*</sup></label>
-
-                </div>
-                <div class="row-group">
-                    <label>上传图片</label>
-                    <input type="file"/>
-                </div>
-                <div class="error-box">
-                    请选择退款原因或填写退款说明(不限字符)
-                </div>
-            </div>
-
-            <div class="layer-bottom clearfix">
-                <a class="btn btn-red" href="#">确定并提交申请</a>
-                <a class="btn btn-white" href="#">取消退款</a>
-            </div>
-            <a class="layer-close" href="#"></a>
-        </div>
-    </textarea>
-
-
-    <!-- 支付弹层 -->
-    <textarea class="tpl-layer" id="J-tpl-layer-paying">
-        <div class="layer-v1 layer-paying" id="J-layer-paying">
-
-            <div class="layer-title">正在支付</div>
-
-            <div class="layer-cont">
-                请您在新打开页面上完成支付
-            </div>
-
-            <div class="layer-bottom clearfix">
-                <a class="btn btn-red" href="#">付款成功</a>
-                <a class="btn btn-white" href="#">遇到问题，再试一次</a>
-            </div>
-            <a class="layer-close" href="#"></a>
-        </div>
-    </textarea>
-
-
-    <div class="page-layer" id="J-page-layer"></div>
-
-
-    <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="../js/layer.js"></script>
-    <script>
-        $(function () {
-
-            var layerLists = $('#J-layer-lists');
-
-            // 显示页面弹层
-            function pageLayerShow () {
-                $('#J-page-layer').show();
-            }
-
-            // 隐藏页面弹层
-            function pageLayerHide () {
-                $('#J-page-layer').hide();
-            }
-
-            // 弹层模板解析
-            function layerToggle ( tpl, layer ) {
-                $('body').append( $(tpl).val() );
-
-                new Layer($(layer), {
-                    animate: true
-                }).show(function ( el ) {
-                    el.find('.btn').click(function () {
-                        el.remove();
-                        pageLayerHide();
-                        return false;
-                    });
-                });
-
-                pageLayerShow();
-            }
-
-
-            layerLists.find('.J-layer-base-preview').click(function () {
-                layerToggle( '#J-tpl-layer-base', '#J-layer-base' );
-                return false;
-            });
-
-
-            layerLists.find('.J-layer-alert-preview').click(function () {
-                layerToggle( '#J-tpl-layer-alert', '#J-layer-alert' );
-                return false;
-            });
-
-            layerLists.find('.J-layer-alert-icon-preview').click(function () {
-                layerToggle( '#J-tpl-layer-alert-icon', '#J-layer-alert-icon' );
-                return false;
-            });
-
-            layerLists.find('.J-layer-editAddress-preview').click(function () {
-                layerToggle( '#J-tpl-layer-editAddress', '#J-layer-editAddress' );
-                return false;
-            });
-
-            layerLists.find('.J-layer-tuikuan-preview').click(function () {
-                layerToggle( '#J-tpl-layer-tuikuan', '#J-layer-tuikuan' );
-                return false;
-            });
-
-            layerLists.find('.J-layer-paying-preview').click(function () {
-                layerToggle( '#J-tpl-layer-paying', '#J-layer-paying' );
-                return false;
-            });
-        });
-    </script>
 </body>
 </html>
