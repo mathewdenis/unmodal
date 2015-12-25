@@ -8,22 +8,30 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+
     less: {
       development: {
         options: {
-          paths: ['assets/css'],
-          compress: false
+          paths: ['assets/css']
         },
         files: {
           'src/css/unmodal.css': 'src/less/unmodal.less'
+        }
+      },
+      production: {
+        options: {
+          paths: ['assets/css']
+        },
+        files: {
+          'dist/unmodal.min.css': 'src/less/unmodal.less'
         }
       }
     },
 
     copy: {
-      main: {
+      production: {
         files: [
-          {expand: true, flatten: true, src: 'src/js/unmodal.js', dest: 'src/js'}
+          {expand: true, flatten: true, src: 'src/js/unmodal.js', dest: 'dist'}
         ]
       }
     },
@@ -31,7 +39,7 @@ module.exports = function (grunt) {
     watch: {
       scripts: {
         files: ['src/less/*.less'],
-        tasks: ['less']
+        tasks: ['less:development']
       }
     },
 
@@ -46,7 +54,6 @@ module.exports = function (grunt) {
           port: '3000',
           watchTask: true,
           server: {
-            // proxy: 'server.js'
             baseDir: './'
           },
           open: false
@@ -56,9 +63,11 @@ module.exports = function (grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-less');
-  // grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-browser-sync');
 
-  grunt.registerTask('server', ['browserSync', 'less', 'watch']);
+  grunt.registerTask('server', ['browserSync', 'less:development', 'watch']);
+
+  grunt.registerTask('build', ['less:production', 'copy:production']);
 };
