@@ -20,7 +20,8 @@ module.exports = function (grunt) {
       },
       production: {
         options: {
-          paths: ['assets/css']
+          paths: ['assets/css'],
+          compress: true
         },
         files: {
           'dist/unmodal.min.css': 'src/less/unmodal.less'
@@ -31,8 +32,17 @@ module.exports = function (grunt) {
     copy: {
       production: {
         files: [
-          {expand: true, flatten: true, src: 'src/js/unmodal.js', dest: 'dist'}
+          {expand: true, flatten: true, src: 'src/js/unmodal.js', dest: 'dist'},
+          {expand: true, flatten: true, src: 'src/css/unmodal.css', dest: 'dist'}
         ]
+      }
+    },
+
+    uglify: {
+      production: {
+        files: {
+          'dist/unmodal.min.js': ['src/js/unmodal.js']
+        }
       }
     },
 
@@ -64,10 +74,11 @@ module.exports = function (grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-browser-sync');
 
   grunt.registerTask('server', ['browserSync', 'less:development', 'watch']);
 
-  grunt.registerTask('build', ['less:production', 'copy:production']);
+  grunt.registerTask('build', ['less:production', 'copy:production', 'uglify:production']);
 };
