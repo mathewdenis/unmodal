@@ -1,8 +1,10 @@
-/**
- * Unmodal -- jQuery模态框插件
- * @version 0.0.1
- * @author hiwangchi@gmail.com
- * @homepage https://github.com/wangchi/unmodal
+/*!
+ * Unmodal -- jQuery modal plugin
+ * Version: 0.3.0
+ * https://github.com/wangchi/unmodal
+ *
+ * Copyright 2015 hiwangchi@gmail.com
+ * MIT License
  */
 'use strict';
 
@@ -156,9 +158,18 @@
 
     // 显示后回调
     self.onShown = function () {
+
+      // 如果模态框以message的形式显示，点击背景即可关闭
+      if (!self.options.header && !self.options.footer) {
+        self.$backdrop.click(function () {
+          self.close();
+        });
+      }
+
       if (typeof self.options.onShown === 'function') {
         self.options.onShown(self.$unmodal);
       }
+
     };
 
     // 关闭模态框
