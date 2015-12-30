@@ -1,6 +1,6 @@
 $(function () {
 
-  // 基础对话框
+  // 基础模态框
   $('.j-unmodal-base').click(function () {
 
     $.unmodal({
@@ -30,6 +30,18 @@ $(function () {
     $.unmodal({
       header: false,
       sContent: '这个没有头部'
+    });
+
+  });
+
+
+  // 既没有header，也没有footer
+  $('.j-unmodal-no-header-and-footer').click(function () {
+
+    $.unmodal({
+      header: false,
+      footer: false,
+      sContent: '只是弹出一条信息，点击灰色区域即可关闭！'
     });
 
   });
@@ -88,6 +100,15 @@ $(function () {
       title: '嵌入iframe',
       sContent: '<iframe height=300 width=500 src="http://player.youku.com/embed/XMTMzNTI4ODQ5Ng==" frameborder=0 allowfullscreen></iframe>',
       footer: false
+    });
+  });
+
+  // 模态框浮动，不随滚动条滚动
+  $('.j-unmodal-fixed').click(function () {
+    $.unmodal({
+      title: '模态框浮动',
+      sContent: '这个模态框设置了属性`fixed: true`，它不会跟随滚动条滚动而滚动',
+      fixed: true
     });
   });
 

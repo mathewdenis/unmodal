@@ -40,6 +40,17 @@ module.exports = function (grunt) {
 
     uglify: {
       production: {
+        options: {
+          banner:
+          '/*!\n' +
+           '* Unmodal -- jQuery modal plugin\n' +
+           '* Version: <%= pkg.version %>\n' +
+           '* https://github.com/wangchi/unmodal\n' +
+           '*\n' +
+           '* Copyright 2015 hiwangchi@gmail.com\n' +
+           '* MIT License\n' +
+           '*/\n'
+        },
         files: {
           'dist/unmodal.min.js': ['src/js/unmodal.js']
         }
@@ -54,7 +65,7 @@ module.exports = function (grunt) {
     },
 
     browserSync: {
-      bsFiles: {
+      development: {
         src: [
           'src/html/*.html',
           'src/css/*.css',
@@ -78,7 +89,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-browser-sync');
 
-  grunt.registerTask('server', ['browserSync', 'less:development', 'watch']);
+  grunt.registerTask('server', ['browserSync:development', 'less:development', 'watch']);
 
   grunt.registerTask('build', ['less:production', 'copy:production', 'uglify:production']);
 };
